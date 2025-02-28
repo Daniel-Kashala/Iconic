@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Idealist Sans';
+            src: url('fonts/Idealist-Sans-Regular.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Idealist Sans', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            background-color: #000;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i {
+            margin-right: 8px;
+        }
+
+        .contact-button {
+            display: none;
+            border: 1px solid #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .contact-button a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .burger-menu {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 8px; /* Remonté ici */
+            right: 10px; /* Aligné à droite */
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .dynamic-section {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            height: 100%;
+            flex-wrap: wrap;
+        }
+
+        .static-box, .dynamic-boxes {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            font-size: 20px;
+            z-index: 2;
+            padding-right: 50px;
+        }
+
+        .static-box {
+            width: 45%;
+            height: 200px;
+            padding: 10px 30px;
+            text-align: right;
+            border-right: 10px solid rgb(255, 255, 255);
+        }
+
+        .dynamic-boxes {
+            width: 45%;
+            height: 200px;
+            position: relative;
+            text-align: left;
+        }
+
+        .dynamic-box {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #111;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger-menu {
+                display: block;
+                position: absolute;
+                top: 1px; /* Ajusté pour être encore plus haut */
+                right: 10px;
+                font-size: 30px;
+                cursor: pointer;
+            }
+
+            .contact-button {
+                display: none; /* Masqué sur mobile */
+            }
+
+            .contact-svg {
+                display: block; /* Affiché à côté du hamburger */
+                position: absolute;
+                top: 8px; /* Aligné avec le hamburger */
+                right: 60px; /* Juste avant le hamburger */
+                cursor: pointer;
+            }
+
+            .dynamic-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .static-box, .dynamic-boxes {
+                width: 90%;
+                height: 150px;
+                text-align: left;
+                border-right: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .contact-button {
+                display: inline-block; /* Affichage sur grands écrans */
+            }
+
+            .contact-svg {
+                display: none; /* Masqué sur grands écrans */
+            }
+        }
+
+        .static-box h1 {
+            font-size: 60px;
+            margin: 0;
+            margin-right: -10px;
+        }
+
+        .static-box h2 {
+            font-size: 24px;
+            margin-top: 10px;
+            margin-right: -10px;
+        }
+
+        .contact-button i {
+            font-size: 22px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="iconn.jpeg" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil"><i class="fas fa-home"></i><strong>ACCUEIL</strong></a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i><strong>SERVICES</strong></a></li>
+                <li><a href="#promotions"><i class="fas fa-tags"></i><strong>PROMOTIONS</strong></a></li>
+                <li><a href="#apropos"><i class="fas fa-info-circle"></i><strong>À PROPOS</strong></a></li>
+            </ul>
+            <div class="burger-menu" id="burger-menu">
+                <span>&#9776;</span>
+            </div>
+
+            <!-- Bouton Contact sur grands écrans -->
+            <div class="contact-button">
+                <a href="#contact">
+                    <span>Contactez-nous</span>
+                </a>
+            </div>
+
+            <!-- SVG pour le bouton Contact à côté du menu hamburger sur mobile -->
+            <div class="contact-svg">
+                <a href="#contact">
+                    <i class="fas fa-phone-alt" style="font-size: 24px; color: white;"></i>
+                </a>
+                
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay loop muted>
+            <source src="background-video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="dynamic-section">
+            <div class="static-box">
+                <div>
+                    <h1>ICONIC</h1>
+                    <h2>Marketing Agency</h2>
+                </div>
+            </div>
+            <div class="dynamic-boxes">
+                <div class="dynamic-box">
+                    <div class="text-group">
+                        <h3>Boostez votre compte</h3>
+                        <p>Augmentez votre visibilité et atteignez plus de personnes.</p>
+                    </div>
+                </div>
+                <div class="dynamic-box">Élargissez votre audience</div>
+                <div class="dynamic-box">Faites la promotion de vos services</div>
+                <div class="dynamic-box">Devenez IconiC</div>
+                <div class="dynamic-box">Profitez de nos promotions</div>
+            </div>
+        </div>
+    </section>
+    <section id="apropos">
+        <h2>À Propos</h2>
+        <p>Nous sommes une entreprise dédiée à offrir des solutions innovantes et adaptées à vos besoins.</p>
+    </section>
+    
+    <section id="services">
+        <h2>Nos Services</h2>
+        <ul>
+            <li>Développement Web</li>
+            <li>Réseaux Informatiques</li>
+            <li>Sécurité Informatique</li>
+            <li>Graphisme</li>
+            <li>Car Tracking</li>
+            <li>Vidéo Surveillance</li>
+            <li>Conception d'Applications</li>
+            <li>Live Streaming</li>
+        </ul>
+    </section>
+    
+    <section id="promotions">
+        <h2>Promotions</h2>
+        <p>Profitez de nos offres spéciales et réductions sur nos services. Restez à l'affût des promotions en cours !</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Email : contact@exemple.com</p>
+        <p>Téléphone : +243 000 000 000</p>
+        <p>Adresse : 123 Avenue des Entreprises, Lubumbashi, RDC</p>
+    </section>
+    
+
+    <script>
+        document.getElementById("burger-menu").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+
+        let boxes = document.querySelectorAll(".dynamic-box");
+        let index = 0;
+
+        function showBox() {
+            boxes.forEach(box => box.style.opacity = "0");
+            boxes[index].style.opacity = "1";
+            index = (index + 1) % boxes.length;
+            setTimeout(showBox, 5000);
+        }
+
+        showBox();
+    </script>
+</body>
+</html>
