@@ -443,45 +443,45 @@
 
 <section class="realisations">
   <h2>Nos Réalisations</h2>
-  <div class="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item">
+  <div class="carousel" onmousedown="startDrag(event)" onmousemove="dragCarousel(event)" onmouseup="endDrag(event)" onmouseleave="endDrag(event)">
+    <div class="carousel-inner" id="carousel-inner">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <img src="image1.jpg" alt="Réalisation 1">
         <div class="description">Réalisation 1 - Design graphique</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <video src="video1.mp4" controls></video>
         <div class="description">Vidéo 1 - Publicité visuelle</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <img src="image2.jpg" alt="Réalisation 2">
         <div class="description">Réalisation 2 - Illustration</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <img src="image3.jpg" alt="Réalisation 3">
         <div class="description">Réalisation 3 - Affiche publicitaire</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <video src="video2.mp4" controls></video>
         <div class="description">Vidéo 2 - Vidéo d'animation</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <img src="image4.jpg" alt="Réalisation 4">
         <div class="description">Réalisation 4 - Branding</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <img src="image5.jpg" alt="Réalisation 5">
         <div class="description">Réalisation 5 - Logo design</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <video src="video3.mp4" controls></video>
         <div class="description">Vidéo 3 - Montage vidéo</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <img src="image6.jpg" alt="Réalisation 6">
         <div class="description">Réalisation 6 - Illustration numérique</div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
         <img src="image7.jpg" alt="Réalisation 7">
         <div class="description">Réalisation 7 - Packaging produit</div>
       </div>
@@ -506,14 +506,14 @@
 
   .carousel {
     position: relative;
-    overflow: hidden;
+    overflow-x: scroll;
     width: 100%;
+    cursor: grab;
   }
 
   .carousel-inner {
     display: flex;
-    gap: 20px;
-    animation: slide 30s infinite linear;
+    gap: 30px; /* Espace entre les éléments */
   }
 
   .carousel-item {
@@ -523,6 +523,7 @@
     position: relative;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
 
   .carousel-item img,
@@ -543,18 +544,18 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  /* Animation pour faire défiler automatiquement */
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+  /* Zoom sur appui long */
+  .zoomed {
+    transform: scale(1.2); /* Agrandir l'élément */
+    z-index: 10;
   }
 
   /* Masquer la barre de défilement */
-  .carousel-inner::-webkit-scrollbar {
+  .carousel::-webkit-scrollbar {
     display: none;
   }
 
-  .carousel-inner {
+  .carousel {
     scrollbar-width: none;
   }
 
@@ -582,6 +583,43 @@
     }
   }
 </style>
+
+<script>
+  // Variables pour le défilement manuel
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+  function startDrag(e) {
+    isDragging = true;
+    startX = e.pageX;
+    scrollLeft = document.getElementById('carousel-inner').scrollLeft;
+    document.querySelector('.carousel').style.cursor = 'grabbing';
+  }
+
+  function dragCarousel(e) {
+    if (!isDragging) return;
+    const x = e.pageX;
+    const walk = (x - startX) * 2; // Le facteur détermine la vitesse de défilement
+    document.getElementById('carousel-inner').scrollLeft = scrollLeft - walk;
+  }
+
+  function endDrag() {
+    isDragging = false;
+    document.querySelector('.carousel').style.cursor = 'grab';
+  }
+
+  // Fonction de zoom sur appui long
+  function zoomIn(event) {
+    const item = event.currentTarget;
+    item.classList.add('zoomed');
+  }
+
+  function zoomOut(event) {
+    const item = event.currentTarget;
+    item.classList.remove('zoomed');
+  }
+</script>
 
 
     
