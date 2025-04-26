@@ -250,54 +250,128 @@
     }
 </style>
 
-<section id="about">
-    <h2 style="text-align: center; font-size: 32px; color: #F4C04D; margin-bottom: 40px;">Qui sommes-nous?</h2>
-    <div class="about-container" style="margin-bottom: 40px;">
-        <img src="https://www.francetravail.fr/files/live/sites/PE/files/secteurs-metiers/Domotique-web-telecom/sorienter-vers-linformatique850.jpg" alt="À propos de KahPeripherique" class="about-image">
-        <div class="about-text">
-            <p style="text-align: justify; color: #1C2341;">
-                KahPeripherique est une entreprise spécialisée dans la communication visuelle, offrant des solutions créatives et sur mesure pour transmettre des messages puissants à travers des éléments visuels. 
-                Nous intervenons dans plusieurs domaines, tels que le design graphique, l'illustration, la photographie, la vidéo et animation, l'infographie, le webdesign, la signalétique, et bien plus.
-            </p>
-            <p style="text-align: justify;color: #1C2341;">
-                Notre équipe de créateurs passionnés met son expertise au service des entreprises et des particuliers pour des projets personnalisés qui allient innovation et qualité. Grâce à notre approche professionnelle et minimaliste, nous transformons vos idées en créations visuelles impactantes qui marquent les esprits.
-            </p>
-        </div>
+<section class="about-section">
+  <div class="about-container">
+    <h1 class="about-title">À propos de KahPeripherique</h1>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="ton-image.jpg" alt="KahPeripherique">
+      </div>
+      <div class="about-text">
+        <p>
+          KahPeripherique est votre partenaire en communication visuelle basé à Lubumbashi et Kolwezi, RDC. 
+          Nous offrons des services de design graphique, illustration, photographie, vidéo, animation, infographie, 
+          webdesign, signalétique, présentations visuelles et publicité visuelle pour entreprises et particuliers.
+        </p>
+        <p class="contact">
+          Contactez-nous : +243977997048 | kahperipherique@gmail.com
+        </p>
+        <a href="#contact" class="about-button">Nous Contacter</a>
+      </div>
     </div>
-    <style>
-        .about-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            width: 80%;
-        }
-
-        .about-image {
-            width: 60%; 
-        }
-
-        .about-text {
-            width: 55%;
-        }
-
-        @media (max-width: 768px) {
-            .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .about-image,
-            .about-text {
-                width: 100%;
-            }
-            .about-image {
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+  </div>
 </section>
 
+<style>
+  .about-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+
+  .about-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-title {
+    font-size: 2.8em;
+    color: #1C2341;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 500px;
+    border: 15px solid #F4C04D; /* Jaune doré */
+    border-radius: 10px;
+  }
+
+  .about-text {
+    margin-top: 30px;
+    text-align: center;
+    color: #1C2341;
+  }
+
+  .about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+  }
+
+  .about-text .contact {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #F4C04D;
+  }
+
+  .about-button {
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 30px;
+    background-color: #F4C04D;
+    color: #1C2341;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+
+  .about-button:hover {
+    background-color: #e0aa3d;
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .about-content {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .about-text {
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .about-button {
+      width: auto;
+      max-width: none;
+      display: inline-block;
+    }
+  }
+</style>
+
+    
 <section id="services">
     <h2 style="font-size: 32px; color: #1C2341; margin-bottom: 40px;">Nos Services en Communication Visuelle</h2>
     <div class="services-container" style="margin-bottom: 40px;">
