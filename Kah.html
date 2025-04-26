@@ -250,127 +250,122 @@
     }
 </style>
 
-<section class="about-section">
+<section id="a-propos" class="about-section">
+  <h2 class="about-title">À propos de KahPeripherique</h2>
+  
   <div class="about-container">
-    <h1 class="about-title">À propos de KahPeripherique</h1>
-    <div class="about-content">
-      <div class="about-image">
-        <img src="ton-image.jpg" alt="KahPeripherique">
-      </div>
-      <div class="about-text">
-        <p>
-          KahPeripherique est votre partenaire en communication visuelle basé à Lubumbashi et Kolwezi, RDC. 
-          Nous offrons des services de design graphique, illustration, photographie, vidéo, animation, infographie, 
-          webdesign, signalétique, présentations visuelles et publicité visuelle pour entreprises et particuliers.
-        </p>
-        <p class="contact">
-          Contactez-nous : +243977997048 | kahperipherique@gmail.com
-        </p>
-        <a href="#contact" class="about-button">Nous Contacter</a>
-      </div>
+    <div class="about-image">
+      <img src="ton-image.jpg" alt="KahPeripherique">
+    </div>
+    <div class="about-text">
+      <p>
+        KahPeripherique est votre partenaire en communication visuelle basé à Lubumbashi et Kolwezi, RDC. 
+        Nous offrons des services de design graphique, illustration, photographie, vidéo, animation, infographie, 
+        webdesign, signalétique, présentations visuelles et publicité visuelle pour entreprises et particuliers.
+      </p>
+      <p>
+        Avec une équipe d'experts passionnés, nous transformons vos idées en visuels impactants et mémorables. 
+        Nous mettons notre expertise technique et notre créativité à votre service pour vous accompagner dans la réalisation de vos projets.
+      </p>
     </div>
   </div>
+
+  <a href="https://wa.me/243977997048" class="cta-button" target="_blank">
+    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Collaborer avec nous maintenant
+  </a>
 </section>
 
 <style>
+  /* Section à propos */
   .about-section {
     padding: 60px 20px;
-    display: flex;
-    justify-content: center;
     background-color: #ffffff;
-  }
-
-  .about-container {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
 
   .about-title {
     font-size: 2.8em;
     color: #1C2341;
     margin-bottom: 40px;
-    text-align: center;
-    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
-  .about-content {
+  .about-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    gap: 40px;
+    margin-bottom: 40px;
   }
 
   .about-image img {
     width: 100%;
     max-width: 500px;
-    border: 15px solid #F4C04D; /* Jaune doré */
     border-radius: 10px;
+    border: 15px solid #F4C04D;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 
   .about-text {
-    margin-top: 30px;
-    text-align: center;
+    width: 55%;
+    text-align: justify;
     color: #1C2341;
-  }
-
-  .about-text p {
     font-size: 1.1em;
-    line-height: 1.6;
-    font-family: 'Poppins', 'Montserrat', sans-serif;
+    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
   }
 
-  .about-text .contact {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #F4C04D;
-  }
-
-  .about-button {
-    margin-top: 30px;
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    padding: 15px 30px;
-    background-color: #F4C04D;
-    color: #1C2341;
-    font-weight: bold;
-    font-size: 1.1em;
-    text-align: center;
+  /* Bouton WhatsApp */
+  .cta-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    background-color: #25D366;
     text-decoration: none;
-    border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     transition: background-color 0.3s;
+    width: 80%;
+    height: 50px;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-top: 30px;
   }
 
-  .about-button:hover {
-    background-color: #e0aa3d;
+  .cta-button:hover {
+    background-color: #1ebc59;
   }
 
-  /* Responsive */
-  @media (min-width: 768px) {
-    .about-content {
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
+  .cta-button i {
+    font-size: 20px;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .about-image {
+      width: 100%;
+      margin-bottom: 20px;
     }
 
     .about-text {
-      text-align: left;
-      margin-top: 0;
+      width: 100%;
     }
 
-    .about-button {
-      width: auto;
-      max-width: none;
-      display: inline-block;
+    .cta-button {
+      font-size: 16px;
     }
   }
 </style>
 
+<!-- Font Awesome (à mettre dans le <head>) -->
+<script src="https://kit.fontawesome.com/ton_code_ici.js" crossorigin="anonymous"></script>
     
 <section id="services">
     <h2 style="font-size: 32px; color: #1C2341; margin-bottom: 40px;">Nos Services en Communication Visuelle</h2>
@@ -907,10 +902,26 @@ document.querySelectorAll('.video-youtube').forEach(item => {
 
         <div class="footer-box">
             <h3>Suivez-nous</h3>
-            <ul>
-                <li><i class="fab fa-facebook"></i> Facebook</li>
-                <li><i class="fab fa-instagram"></i> Instagram</li>
-                <li><i class="fab fa-linkedin"></i> LinkedIn</li>
+            <ul>    <li>
+        <a href="https://www.facebook.com/profile.php?id=100063541268128" target="_blank">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+    </li>
+    <li>
+        <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </li>
+    <li>
+        <a href="https://www.linkedin.com/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </li>
+    <li>
+        <a href="https://www.youtube.com/" target="_blank">
+            <i class="fab fa-youtube"></i> YouTube
+        </a>
+    </li>
             </ul>
         </div>
     </div>
