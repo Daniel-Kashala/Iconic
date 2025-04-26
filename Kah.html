@@ -251,7 +251,7 @@
 </style>
 
 <section id="about">
-    <h2 style="text-align: center; font-size: 32px; color: #F4C04D; margin-bottom: 40px;">Tout Savoir sur KahPeripherique</h2>
+    <h2 style="text-align: center; font-size: 32px; color: #F4C04D; margin-bottom: 40px;">Qui sommes-nous?</h2>
     <div class="about-container" style="margin-bottom: 40px;">
         <img src="https://www.francetravail.fr/files/live/sites/PE/files/secteurs-metiers/Domotique-web-telecom/sorienter-vers-linformatique850.jpg" alt="À propos de KahPeripherique" class="about-image">
         <div class="about-text">
@@ -259,7 +259,7 @@
                 KahPeripherique est une entreprise spécialisée dans la communication visuelle, offrant des solutions créatives et sur mesure pour transmettre des messages puissants à travers des éléments visuels. 
                 Nous intervenons dans plusieurs domaines, tels que le design graphique, l'illustration, la photographie, la vidéo et animation, l'infographie, le webdesign, la signalétique, et bien plus.
             </p>
-            <p style="text-align: justify;letter-spacing: 3px;color: #1C2341;">
+            <p style="text-align: justify;color: #1C2341;">
                 Notre équipe de créateurs passionnés met son expertise au service des entreprises et des particuliers pour des projets personnalisés qui allient innovation et qualité. Grâce à notre approche professionnelle et minimaliste, nous transformons vos idées en créations visuelles impactantes qui marquent les esprits.
             </p>
         </div>
@@ -760,25 +760,22 @@
         <div class="footer-box">
             <h3>KahPeripherique</h3>
             <ul>
-                <li>Accueil</li>
-                <li>À propos</li>
-                <li>Services</li>
-                <li>Formations</li>
-                <li>Contact</li>
+                <li><i class="fas fa-home"></i> Accueil</li>
+                <li><i class="fas fa-info-circle"></i> À propos</li>
+                <li><i class="fas fa-cogs"></i> Services</li>
+                <li><i class="fas fa-bullhorn"></i> Promotions</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> Formation</li>
+                <li><i class="fas fa-envelope-open-text"></i> Contact</li>
             </ul>
         </div>
 
         <div class="footer-box">
-            <h3>Nos Domaines</h3>
+            <h3>Services</h3>
             <ul>
-                <li>Design Graphique</li>
-                <li>Illustration</li>
-                <li>Photographie</li>
-                <li>Vidéo & Animation</li>
-                <li>Infographie</li>
-                <li>Webdesign</li>
-                <li>Signalétique</li>
-                <li>Publicité Visuelle</li>
+                <li><i class="fas fa-pencil-ruler"></i> Design Graphique</li>
+                <li><i class="fas fa-paint-brush"></i> Illustration</li>
+                <li><i class="fas fa-camera"></i> Photographie</li>
+                <li><i class="fas fa-video"></i> Vidéo & Animation</li>
             </ul>
         </div>
 
@@ -799,70 +796,75 @@
                 <li><i class="fab fa-linkedin"></i> LinkedIn</li>
             </ul>
         </div>
-
     </div>
 
     <div class="footer-copyright">
-        <p>&copy; 2025 KahPeripherique. Tous droits réservés.</p>
+        <p>&copy; 2024 KahPeripherique. Tous droits réservés.</p>
     </div>
 </section>
 
 <style>
+    #footer {
+        padding: 50px 20px;
+        background-color: #000000;
+        color: #FFFFFF;
+        text-align: center;
+    }
 
-#footer {
-    padding: 50px 20px;
-    background-color: #1C2341; /* Bleu foncé de KahPeripherique */
-    color: #FFFFFF;
-    text-align: center;
-}
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+    }
 
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
+    .footer-box {
+        text-align: left;
+    }
 
-.footer-box {
-    text-align: left;
-}
+    .footer-box h3 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #FFFFFF;
+    }
 
-.footer-box h3 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #F4C04D; /* Jaune doré de KahPeripherique */
-}
+    .footer-box ul {
+        list-style: none;
+        padding: 0;
+    }
 
-.footer-box ul {
-    list-style: none;
-    padding: 0;
-}
+    .footer-box ul li {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
 
-.footer-box ul li {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #FFFFFF;
-}
+    .footer-box ul li i {
+        font-size: 18px;
+        color: inherit;
+    }
 
-.footer-box ul li i {
-    margin-right: 10px;
-    color: #F4C04D; /* Petits icônes en doré */
-    font-size: 18px;
-}
+    .footer-copyright {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #FFFFFF;
+    }
 
-.footer-copyright {
-    margin-top: 30px;
-    font-size: 14px;
-}
-
-.footer-copyright p {
-    color: #FFFFFF;
-}
-
+    @media (max-width: 600px) {
+        .footer-box {
+            text-align: center;
+        }
+    }
 </style>
+
+<!-- Lien Font Awesome à ajouter si nécessaire -->
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
     
 </body>
 </html>
