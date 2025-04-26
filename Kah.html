@@ -250,128 +250,168 @@
     }
 </style>
 
-<section id="services" style="padding: 60px 20px; background-color: #fff;">
-  <h1 style="text-align: center; font-size: 32px; color: #1C2341; margin-bottom: 40px;">Nos Services en Communication Visuelle</h1>
-  <div style="max-width: 900px; margin: 0 auto 40px;">
-    <p style="font-size: 18px; color: #1C2341; text-align: justify;">
-      KahPeripherique se spécialise dans la transmission de messages visuels percutants et efficaces. Nous proposons une gamme complète de services pour les entreprises et les particuliers, visant à renforcer votre communication visuelle à travers des éléments visuels dynamiques et créatifs. Découvrez nos services ci-dessous.
-    </p>
-  </div>
+<section id="about">
+    <h2 style="text-align: center; font-size: 32px; color: #F4C04D; margin-bottom: 40px;">Tout Savoir sur KahPeripherique</h2>
+    <div class="about-container" style="margin-bottom: 40px;">
+        <img src="https://www.francetravail.fr/files/live/sites/PE/files/secteurs-metiers/Domotique-web-telecom/sorienter-vers-linformatique850.jpg" alt="À propos de KahPeripherique" class="about-image">
+        <div class="about-text">
+            <p style="text-align: justify; color: #1C2341;">
+                KahPeripherique est une entreprise spécialisée dans la communication visuelle, offrant des solutions créatives et sur mesure pour transmettre des messages puissants à travers des éléments visuels. 
+                Nous intervenons dans plusieurs domaines, tels que le design graphique, l'illustration, la photographie, la vidéo et animation, l'infographie, le webdesign, la signalétique, et bien plus.
+            </p>
+            <p style="text-align: justify; color: #1C2341;">
+                Notre équipe de créateurs passionnés met son expertise au service des entreprises et des particuliers pour des projets personnalisés qui allient innovation et qualité. Grâce à notre approche professionnelle et minimaliste, nous transformons vos idées en créations visuelles impactantes qui marquent les esprits.
+            </p>
+        </div>
+    </div>
+    <style>
+        .about-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
 
-  <div class="services-container">
-    <div class="service-item" onclick="window.location.href='design.html';">
-      <img src="https://www.example.com/graphic-design-image.jpg" alt="Design graphique">
-      <h3>Design Graphique</h3>
-      <p>Création de logos, chartes graphiques, affiches, brochures et packaging sur mesure pour renforcer l'image de votre marque.</p>
-      <a href="design.html" class="more-info">En savoir plus</a>
+        .about-image {
+            width: 45%; 
+        }
+
+        .about-text {
+            width: 55%;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image,
+            .about-text {
+                width: 100%;
+            }
+            .about-image {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</section>
+
+<section id="services">
+    <h2 style="font-size: 32px; color: #1C2341; margin-bottom: 40px;">Nos Services en Communication Visuelle</h2>
+    <div class="services-container" style="margin-bottom: 40px;">
+        <div style="width: 60%; margin: 0 auto;">
+            <p style="font-size: 18px; color: #1C2341; margin-bottom: 30px; text-align: justify;">
+                KahPeripherique se spécialise dans la transmission de messages visuels percutants et efficaces. Nous proposons une gamme complète de services pour les entreprises et les particuliers, visant à renforcer votre communication visuelle à travers des éléments visuels dynamiques et créatifs. Découvrez nos services ci-dessous.
+            </p>
+        </div>
+
+        <div class="services-container" style="margin-bottom: 40px;">
+            <div class="service-item" onclick="window.location.href='design.html';" style="cursor: pointer;">
+                <img src="https://www.example.com/graphic-design-image.jpg" alt="Design graphique">
+                <h3>Design Graphique</h3>
+                <p>Création de logos, chartes graphiques, affiches, brochures et packaging sur mesure pour renforcer l'image de votre marque.</p>
+                <a href="design.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='illustration.html';" style="cursor: pointer;">
+                <img src="https://www.example.com/illustration-image.jpg" alt="Illustration">
+                <h3>Illustration</h3>
+                <p>Conception de dessins, croquis et illustrations numériques uniques, adaptés à vos besoins visuels.</p>
+                <a href="illustration.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='photography.html';" style="cursor: pointer;">
+                <img src="https://www.example.com/photography-image.jpg" alt="Photographie">
+                <h3>Photographie</h3>
+                <p>Réalisation de photos professionnelles pour renforcer vos supports de communication visuelle.</p>
+                <a href="photography.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='video-animation.html';" style="cursor: pointer;">
+                <img src="https://www.example.com/video-animation-image.jpg" alt="Vidéo et animation">
+                <h3>Vidéo et Animation</h3>
+                <p>Création de vidéos et animations qui captivent votre audience et transmettent votre message de manière percutante.</p>
+                <a href="video-animation.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='infographics.html';" style="cursor: pointer;">
+                <img src="https://www.example.com/infographics-image.jpg" alt="Infographie">
+                <h3>Infographie</h3>
+                <p>Représentation visuelle de données complexes pour une communication simplifiée et claire.</p>
+                <a href="infographics.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='webdesign.html';" style="cursor: pointer;">
+                <img src="https://www.example.com/webdesign-image.jpg" alt="Webdesign">
+                <h3>Webdesign</h3>
+                <p>Création de sites web fonctionnels et esthétiques pour une expérience en ligne mémorable.</p>
+                <a href="webdesign.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='signage.html';" style="cursor: pointer;">
+                <img src="https://www.example.com/signage-image.jpg" alt="Signalétique">
+                <h3>Signalétique</h3>
+                <p>Conception de panneaux, pictogrammes et indications visuelles pour une orientation claire et efficace.</p>
+                <a href="signage.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='advertising.html';" style="cursor: pointer;">
+                <img src="https://www.example.com/advertising-image.jpg" alt="Publicité Visuelle">
+                <h3>Publicité Visuelle</h3>
+                <p>Création de supports publicitaires visuels : bannières web, affiches, et autres annonces pour promouvoir votre message.</p>
+                <a href="advertising.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+        </div>
     </div>
-    <div class="service-item" onclick="window.location.href='illustration.html';">
-      <img src="https://www.example.com/illustration-image.jpg" alt="Illustration">
-      <h3>Illustration</h3>
-      <p>Conception de dessins, croquis et illustrations numériques uniques, adaptés à vos besoins visuels.</p>
-      <a href="illustration.html" class="more-info">En savoir plus</a>
-    </div>
-    <div class="service-item" onclick="window.location.href='photography.html';">
-      <img src="https://www.example.com/photography-image.jpg" alt="Photographie">
-      <h3>Photographie</h3>
-      <p>Réalisation de photos professionnelles pour renforcer vos supports de communication visuelle.</p>
-      <a href="photography.html" class="more-info">En savoir plus</a>
-    </div>
-    <div class="service-item" onclick="window.location.href='video-animation.html';">
-      <img src="https://www.example.com/video-animation-image.jpg" alt="Vidéo et animation">
-      <h3>Vidéo et Animation</h3>
-      <p>Création de vidéos et animations qui captivent votre audience et transmettent votre message de manière percutante.</p>
-      <a href="video-animation.html" class="more-info">En savoir plus</a>
-    </div>
-    <div class="service-item" onclick="window.location.href='infographics.html';">
-      <img src="https://www.example.com/infographics-image.jpg" alt="Infographie">
-      <h3>Infographie</h3>
-      <p>Représentation visuelle de données complexes pour une communication simplifiée et claire.</p>
-      <a href="infographics.html" class="more-info">En savoir plus</a>
-    </div>
-    <div class="service-item" onclick="window.location.href='webdesign.html';">
-      <img src="https://www.example.com/webdesign-image.jpg" alt="Webdesign">
-      <h3>Webdesign</h3>
-      <p>Création de sites web fonctionnels et esthétiques pour une expérience en ligne mémorable.</p>
-      <a href="webdesign.html" class="more-info">En savoir plus</a>
-    </div>
-    <div class="service-item" onclick="window.location.href='signage.html';">
-      <img src="https://www.example.com/signage-image.jpg" alt="Signalétique">
-      <h3>Signalétique</h3>
-      <p>Conception de panneaux, pictogrammes et indications visuelles pour une orientation claire et efficace.</p>
-      <a href="signage.html" class="more-info">En savoir plus</a>
-    </div>
-    <div class="service-item" onclick="window.location.href='advertising.html';">
-      <img src="https://www.example.com/advertising-image.jpg" alt="Publicité Visuelle">
-      <h3>Publicité Visuelle</h3>
-      <p>Création de supports publicitaires visuels : bannières web, affiches, et autres annonces pour promouvoir votre message.</p>
-      <a href="advertising.html" class="more-info">En savoir plus</a>
-    </div>
-  </div>
 </section>
 
 <style>
-  .services-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .service-item {
-    width: 280px;
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-  }
-
-  .service-item:hover {
-    transform: translateY(-5px);
-  }
-
-  .service-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 15px;
-  }
-
-  .service-item h3 {
-    font-size: 20px;
-    color: #1C2341;
-    margin-bottom: 10px;
-  }
-
-  .service-item p {
-    font-size: 14px;
-    color: #1C2341;
-    margin-bottom: 15px;
-    text-align: justify;
-  }
-
-  .more-info {
-    font-size: 14px;
-    color: #F4C04D;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .more-info:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 768px) {
-    .service-item {
-      width: 100%;
-      max-width: 90%;
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
     }
-  }
+
+    .service-item {
+        width: 250px;
+        text-align: center;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .service-item:hover {
+        transform: scale(1.05);
+    }
+
+    .service-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .service-item h3 {
+        font-size: 20px;
+        color: #1C2341;
+        margin-bottom: 10px;
+    }
+
+    .service-item p {
+        font-size: 14px;
+        color: #1C2341;
+        margin-bottom: 15px;
+    }
+
+    .service-item a {
+        font-size: 14px;
+        color: #F4C04D;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .service-item a:hover {
+        text-decoration: underline;
+    }
 </style>
-<!-- FONT AWESOME (à placer dans le head de ta page HTML) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <section id="promotion" style="background-color: #F4C04D; padding: 50px 0; text-align: center; color: #1C2341;">
     <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">Profitez de nos promotions exclusives !</h2>
     <p style="font-size: 18px; margin-bottom: 40px;">Obtenez des réductions exceptionnelles sur nos services en communication visuelle. Offres limitées, contactez-nous maintenant pour en savoir plus !</p>
