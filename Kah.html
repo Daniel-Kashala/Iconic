@@ -487,6 +487,20 @@
         <img src="B00929EF-66E6-481D-BD5E-2B49C77D27DF.png" alt="Réalisation 7">
         <div class="description">Réalisation 7 - Packaging produit</div>
       </div>
+      <div class="carousel-item">
+        <img src="ton-image.png" alt="Titre">
+        <div class="description">Ton texte ici</div>
+       </div>
+
+    <div class="carousel-item video-local">
+       <video src="ton-fichier.mp4" controls></video>
+       <div class="description">Vidéo locale - Explication</div>
+       </div>
+
+<div class="carousel-item video-youtube" data-video-id="ID_YOUTUBE">
+  <img src="miniature.jpg" alt="Miniature vidéo YouTube">
+  <div class="description">Vidéo YouTube - Titre</div>
+</div>
     </div>
   </div>
 </section>
@@ -535,7 +549,19 @@
     height: 80%;
     border-radius: 20px;
   }
+.video-local video {
+  width: 100%;
+  height: 80%;
+  border-radius: 20px;
+}
 
+.video-youtube img {
+  width: 100%;
+  height: 80%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+    
   .description {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
@@ -588,40 +614,57 @@
 </style>
 
 <script>
-  // Variables pour le défilement manuel
-  let isDragging = false;
-  let startX;
-  let scrollLeft;
+// Défilement
+let isDragging = false;
+let startX, scrollLeft;
+const carousel = document.querySelector('.carousel');
+const inner = document.getElementById('carousel-inner');
 
-  function startDrag(e) {
-    isDragging = true;
-    startX = e.pageX;
-    scrollLeft = document.getElementById('carousel-inner').scrollLeft;
-    document.querySelector('.carousel').style.cursor = 'grabbing';
-  }
+function startDrag(e) {
+  isDragging = true;
+  startX = e.pageX;
+  scrollLeft = inner.scrollLeft;
+  carousel.style.cursor = 'grabbing';
+}
 
-  function dragCarousel(e) {
-    if (!isDragging) return;
-    const x = e.pageX;
-    const walk = (x - startX) * 2; // Le facteur détermine la vitesse de défilement
-    document.getElementById('carousel-inner').scrollLeft = scrollLeft - walk;
-  }
+function dragCarousel(e) {
+  if (!isDragging) return;
+  const x = e.pageX;
+  const walk = (x - startX) * 2;
+  inner.scrollLeft = scrollLeft - walk;
+}
 
-  function endDrag() {
-    isDragging = false;
-    document.querySelector('.carousel').style.cursor = 'grab';
-  }
+function endDrag() {
+  isDragging = false;
+  carousel.style.cursor = 'grab';
+}
 
-  // Fonction de zoom sur appui long
-  function zoomIn(event) {
-    const item = event.currentTarget;
-    item.classList.add('zoomed');
-  }
+carousel.addEventListener('mousedown', startDrag);
+carousel.addEventListener('mousemove', dragCarousel);
+carousel.addEventListener('mouseup', endDrag);
+carousel.addEventListener('mouseleave', endDrag);
 
-  function zoomOut(event) {
-    const item = event.currentTarget;
-    item.classList.remove('zoomed');
-  }
+// Zoom au clic
+function zoomIn(event) {
+  event.currentTarget.classList.add('zoomed');
+}
+
+function zoomOut(event) {
+  event.currentTarget.classList.remove('zoomed');
+}
+
+// Charger YouTube au clic
+document.querySelectorAll('.video-youtube').forEach(item => {
+  item.addEventListener('click', function() {
+    const videoId = this.dataset.videoId;
+    if (!videoId) return;
+    this.innerHTML = `
+      <iframe width="100%" height="80%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div class="description">${this.querySelector('.description').innerText}</div>
+    `;
+    this.classList.remove('video-youtube'); // Enlever la classe pour éviter re-clic
+  });
+});
 </script>
 
 <section class="formation-section">
